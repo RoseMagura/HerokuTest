@@ -31,13 +31,16 @@ class Person(db.Model):
   id = Column(Integer, primary_key=True)
   name = Column(String)
   catchphrase = Column(String)
+  fun = Column(Boolean)
 
-  def __init__(self, name, catchphrase=""):
+  def __init__(self, name, catchphrase="", fun=True):
     self.name = name
     self.catchphrase = catchphrase
+    self.fun = fun
 
   def format(self):
     return {
       'id': self.id,
       'name': self.name,
-      'catchphrase': self.catchphrase}
+      'catchphrase': self.catchphrase,
+      'fun': self.fun}
